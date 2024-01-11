@@ -1,5 +1,5 @@
 3. 자료구조 <br>
-
+- tmtm
 #### Scanner
 Scanner sc = new Scanner(System.in); <br>
 int N = sc.nextInt(); // nextInt() Int타입으로 리턴	 <br>
