@@ -20,3 +20,7 @@ StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine())
 
 int n = Integer.parseInt(stringTokenizer.nextToken()); //첫번째값<br>
 int m = Integer.parseInt(stringTokenizer.nextToken()); //두번째값 받아옴<br>
+<br>
+#### long 형 선언
+문제 5번 int형 long으로 바꿔주니까 정답처리됐다.. int*int에서 int범위 벗어날 수 있기 때문에 long형으로 선언해버리기<br>
+long형으로 선언했는데 int형으로 써야할때만 형변환(int)ㄱㄱ<br>
