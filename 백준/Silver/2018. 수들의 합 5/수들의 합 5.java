@@ -6,13 +6,7 @@ public class Main {
 		// 두줄만 받잖어 그땐 Scanner
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-
-		int[] s = new int[n+1];
-
-		for (int i = 1; i <= n; i++) {
-			s[i] = i; //2=1+1 
-		}
-		// 1,2,3, 4, 5, 6, 7, 8, 9,10
+		//배열 안넣어줘도됨
 
 		int sindex = 1;
 		int eindex = 1;
@@ -22,15 +16,15 @@ public class Main {
 		while(eindex!=n) {
 			if(sum==n) {
 				eindex++; 
-				sum+=s[eindex];
+				sum+=eindex;
 				c++;
 			}
 			else if(sum<n){
 				eindex++; 
-				sum+=s[eindex];
+				sum+=eindex;
 			}
 			else if(sum>n) {
-				sum-=s[sindex];
+				sum-=sindex;
 				sindex++; //뺀다음에 ++해야하니 뒤로
 			}
 		}
