@@ -14,9 +14,9 @@
 long형으로 선언했는데 int형으로 써야할때만 형변환(int)ㄱㄱ<br>
 int형: -2,147,483,648 ~ 2,147,483,647 범위 ( 약 10^9 * 2 )<br>
 <br>
-##### *BufferedReader, Scanner 둘은 같이 쓰면 안됨<br>
+##### *BufferedReader, Scanner 둘은 같이 쓰면 안됨, 두개 선언하니 뒤에 선언한게 한줄 건너뛰고 읽어옴.,.<br>
 #### BufferedReader, StringTokenizer
-BufferedReader, Scanner 둘은 같이 쓰면 안됨<br>
+
 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));<br>
 // BufferedReader: 컴퓨팅에서 버퍼는 데이터를 한 곳에서 다른 한 곳으로 전송하는 동안 일시적으로 그 데이터를 보관하는 메모리의 영역이다.<br>
 // InputStreamReader: 문자단위(character) 데이터로 변환시키는 중간다리 역할을 한다. <br>
