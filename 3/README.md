@@ -14,7 +14,7 @@
 long형으로 선언했는데 int형으로 써야할때만 형변환(int)ㄱㄱ<br>
 int형: -2,147,483,648 ~ 2,147,483,647 범위 ( 약 10^9 * 2 )<br>
 <br>
-##### BufferedReader, Scanner 둘은 같이 쓰면 안됨<br>
+##### *BufferedReader, Scanner 둘은 같이 쓰면 안됨<br>
 #### BufferedReader, StringTokenizer
 BufferedReader, Scanner 둘은 같이 쓰면 안됨<br>
 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));<br>
