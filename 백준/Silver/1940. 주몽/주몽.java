@@ -33,5 +33,19 @@ public class Main {
 
 		System.out.println(c);
 
+		/* 이것도 맞는데 시간이 쫌더 걸리는듓 모든경우를 다봐서 그런가
+		int sum = 0;
+		int c = 0;
+		
+		for(int j=0;j<n-1;j++) {
+			for(int k=j+1; k<n; k++) {
+				sum = s[j]+s[k];
+				if(sum==m) {
+					c++;
+				}
+			}
+		}
+		*/
+		
 	}
 }
