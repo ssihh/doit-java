@@ -7,25 +7,29 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int m = sc.nextInt();
-		
+
 		int[] s = new int[n];
-		for(int i =0; i<n;i++) {
+		for (int i = 0; i < n; i++) {
 			s[i] = sc.nextInt();
 		}
 
+		Arrays.sort(s);
 
-		int sum = 0;
+		int si = 0;
+		int ei = n - 1;
 		int c = 0;
-		
-		for(int j=0;j<n-1;j++) {
-			for(int k=j+1; k<n; k++) {
-				sum = s[j]+s[k];
-				if(sum==m) {
-					c++;
-				}
+
+		while (si < ei) {
+			if (m > s[si] + s[ei]) {
+				si++;
+			} else if (m < s[si] + s[ei]) {
+				ei--;
+			} else {
+				c++;
+				si++;
+				ei--;
 			}
 		}
-
 
 		System.out.println(c);
 
