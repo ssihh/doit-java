@@ -16,13 +16,13 @@ int형: -2,147,483,648 ~ 2,147,483,647 범위 ( 약 10^9 * 2 )<br>
 <br>
 ##### *BufferedReader, Scanner 둘은 같이 쓰면 안됨, 두개 선언하니 뒤에 선언한게 한줄 건너뛰고 읽어옴.,.<br>
 #### BufferedReader, StringTokenizer
-
-BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));<br>
+s = br.readLine().toCharArray(); //띄어쓰기 없는 문자형을 char[] s 로
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));<br>
 // BufferedReader: 컴퓨팅에서 버퍼는 데이터를 한 곳에서 다른 한 곳으로 전송하는 동안 일시적으로 그 데이터를 보관하는 메모리의 영역이다.<br>
 // InputStreamReader: 문자단위(character) 데이터로 변환시키는 중간다리 역할을 한다. <br>
 // System.in: 값을 입력받는 클래스 <br>
 <br>
-StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());  //readLine(): 예제 첫번째줄을 읽어왔다<br>
+StringTokenizer stringTokenizer = new StringTokenizer(br.readLine());  //readLine(): 예제 첫번째줄을 읽어왔다<br>
 // StringTokenizer: 문자열을 우리가 지정한 구분자로 문자열을 쪼개주는 클래스입니다.<br>
 
 int n = Integer.parseInt(stringTokenizer.nextToken()); //첫번째값<br>
