@@ -14,37 +14,18 @@ public class Main {
 		}
 
 
-		int sindex = 0;
-		int eindex = 1;
 		int sum = 0;
 		int c = 0;
 		
 		for(int j=0;j<n-1;j++) {
 			for(int k=j+1; k<n; k++) {
-//				sindex++; eindex++;
 				sum = s[j]+s[k];
 				if(sum==m) {
 					c++;
 				}
 			}
 		}
-		/*
-		while(eindex!=n) {
-			if(sum==n) {
-				eindex++; 
-				sum+=eindex;
-				c++;
-			}
-			else if(sum<n){
-				eindex++; 
-				sum+=eindex;
-			}
-			else if(sum>n) {
-				sum-=sindex;
-				sindex++; //뺀다음에 ++해야하니 뒤로
-			}
-		}
-*/
+
 
 		System.out.println(c);
 
