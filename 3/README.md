@@ -32,6 +32,7 @@ System.in 은 실행프로그램에서 하나만 생성이 되고 이를 여러�
 #### BufferedReader, StringTokenizer
 br.close(); //BufferedReader를 더 이상 사용할 필요가 없게 되면 close()를 통해서 입력 스트림을 닫고 사용하던 자원을 해제 <br>
 s = br.readLine().toCharArray(); //띄어쓰기 없는 문자형을 char[] s 로 <br>
+<br>
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));<br>
 // BufferedReader: 컴퓨팅에서 버퍼는 데이터를 한 곳에서 다른 한 곳으로 전송하는 동안 일시적으로 그 데이터를 보관하는 메모리의 영역이다.<br>
 // InputStreamReader: 문자단위(character) 데이터로 변환시키는 중간다리 역할을 한다. <br>
