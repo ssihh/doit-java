@@ -27,7 +27,8 @@ switch (s) { <br>
 long형으로 선언했는데 int형으로 써야할때만 형변환(int)ㄱㄱ<br>
 int형: -2,147,483,648 ~ 2,147,483,647 범위 ( 약 10^9 * 2 )<br>
 <br>
-##### *BufferedReader, Scanner 둘은 같이 쓰면 안됨, 두개 선언하니 뒤에 선언한게 한줄 건너뛰고 읽어옴.,.<br>
+##### *BufferedReader, Scanner 둘은 같이 쓰면 안됨, 두개 선언하니 뒤에 선언한게 한줄 건너뛰고 읽어옴.,.
+System.in 은 실행프로그램에서 하나만 생성이 되고 이를 여러격체들이 공유하는 형태<br>
 #### BufferedReader, StringTokenizer
 br.close(); //BufferedReader를 더 이상 사용할 필요가 없게 되면 close()를 통해서 입력 스트림을 닫고 사용하던 자원을 해제 <br>
 s = br.readLine().toCharArray(); //띄어쓰기 없는 문자형을 char[] s 로 <br>
