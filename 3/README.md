@@ -1,5 +1,18 @@
 3. 자료구조 <br>
 
+#### 전역변수, 전역함수 선언
+public class Main { // Main class 아래줄에 전역변수 선언<br>
+	static int[] checkArr; // 전역변수: 스태틱 타입 변수명; <br> 
+private static void Add(char s) {...} // 전역함수: private static void 함수명(파라미터) <br>
+<br>
+#### Swith(n) - case n:{ } 구문
+switch (s) { <br>
+			case 'A': { <br>
+				myArr[0]++; <br>
+				if (myArr[0] == checkArr[0]) { <br>
+					check4++;				} <br>
+				break;			} <br>
+<br>
 #### 메모리초과 (2018번 메모리 제한이 32MB 였음. 보통 128MB)
 해결: 배열을 선언할 때, 적당한 크기로 배열의 사이즈를 할당합니다. long->int <br>
 연속되는 자연수 배열선언없이 하니까 메모리 1/3로 줄어듬.<br>
@@ -22,11 +35,11 @@ BufferedReader br = new BufferedReader(new InputStreamReader(System.in));<br>
 // InputStreamReader: 문자단위(character) 데이터로 변환시키는 중간다리 역할을 한다. <br>
 // System.in: 값을 입력받는 클래스 <br>
 <br>
-StringTokenizer stringTokenizer = new StringTokenizer(br.readLine());  //readLine(): 예제 첫번째줄을 읽어왔다<br>
-// StringTokenizer: 문자열을 우리가 지정한 구분자로 문자열을 쪼개주는 클래스입니다.<br>
+StringTokenizer st = new StringTokenizer(br.readLine());  //readLine(): 한줄 읽어오기 <br>
+// StringTokenizer: 문자열을 우리가 지정한 구분자로 문자열을 쪼개주는 클래스입니다. <br>
 
-int n = Integer.parseInt(stringTokenizer.nextToken()); //첫번째값<br>
-int m = Integer.parseInt(stringTokenizer.nextToken()); //두번째값 받아옴<br>
+int n = Integer.parseInt(st.nextToken()); //첫번째값. 값 받아오기전 readline으로 줄 읽어와야험 <br>
+int m = Integer.parseInt(st.nextToken()); //두번째값 받아옴 <br>
 <br>
 
 #### Scanner
