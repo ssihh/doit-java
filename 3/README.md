@@ -1,5 +1,13 @@
 3. 자료구조 <br>
 
+#### Deque<Node> mydeque = new LinkedList<>();
+static class Node{ <br>
+	public index; public value; <br>
+	Node(int index, int value){<br>
+ 		this.index = index;<br>
+ 		this.value = value;	} }<br>
+   <br>
+
 #### 전역변수, 전역함수 선언
 public class Main { // Main class 아래줄에 전역변수 선언<br>
 	static int[] checkArr; // 전역변수: 스태틱 타입 변수명; <br> 
@@ -27,6 +35,12 @@ switch (s) { <br>
 long형으로 선언했는데 int형으로 써야할때만 형변환(int)ㄱㄱ<br>
 int형: -2,147,483,648 ~ 2,147,483,647 범위 ( 약 10^9 * 2 )<br>
 <br>
+
+#### BufferedWriter br = new BufferedWriter(new OutputStreamWriter(System.out));
+출력을 위해서는 br.write(mydeque.getFirst().value + " ") 후 br.flush() 와 br.close() 를 모두 사용해주어야한다. <br>
+flush 는 write 에 저장된 값을 출력함과 동시에 비워주는 역할이고, close() 를 끝 마무리해주는 역할이라고 한다. <br>
+<br>
+
 ##### *BufferedReader, Scanner 둘은 같이 쓰면 안됨, 두개 선언하니 뒤에 선언한게 한줄 건너뛰고 읽어옴.,.
 System.in 은 실행프로그램에서 하나만 생성이 되고 이를 여러격체들이 공유하는 형태<br>
 #### BufferedReader
