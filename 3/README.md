@@ -1,5 +1,9 @@
 3. 자료구조 <br>
 
+#### Stack<.Integer> stack = new Stack<>();
+stack.push(num++);<br>
+stack.pop();<br>
+<br>
 #### Deque<.Node> mydeque = new LinkedList< >();
 static class Node{ <br>
 	public int index; public int value; <br>
