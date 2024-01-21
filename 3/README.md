@@ -2,7 +2,7 @@
 
 #### Deque<Node> mydeque = new LinkedList<>();
 static class Node{ <br>
-	public index; public value; <br>
+	public int index; public int value; <br>
 	Node(int index, int value){<br>
  		this.index = index;<br>
  		this.value = value;	} }<br>
