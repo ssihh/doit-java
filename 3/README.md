@@ -41,6 +41,11 @@ long형으로 선언했는데 int형으로 써야할때만 형변환(int)ㄱㄱ<
 - int형: -2,147,483,648 ~ 2,147,483,647 범위 ( 약 10^9 * 2 )<br>
 <br>
 
+#### StringBuffer sb = new StringBuffer();
+sb.append("+\n");<br>
+System.out.println(sb.toString);<br>
+StringBuffer는 가변(mutable)한 문자열을 처리하기 위한 클래스입니다. 즉, 새로운 문자열을 추가하거나 변경하게 되면 “기존의 객체”로 추가 및 변경이 됩니다.<br>
+<br>
 #### BufferedWriter br = new BufferedWriter(new OutputStreamWriter(System.out));
 출력을 위해서는 br.write(mydeque.getFirst().value + " ") 후 br.flush() 와 br.close() 를 모두 사용해주어야한다. <br>
 - flush() : write 에 저장된 값을 출력함과 동시에 비워주는 역할이고, 
