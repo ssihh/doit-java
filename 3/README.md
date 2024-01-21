@@ -10,6 +10,7 @@ static class Node{ <br>
 	Node(int index, int value){<br>
  		this.index = index;<br>
  		this.value = value;	} }<br>
+while( !mydeque.isEmpty() && mydeque.getLast().value > now ) { mydeque.removeLast(); }  <br>  
    <br>
 자바의 Linked List는 ArrayList와 같이 인덱스로 접근하여 조회 / 삽입이 가능하지만 내부 구조는 완전히 다르게 구성되어 있다는 점이 특징이다.  <br>
 - ArrayList는 내부적으로 배열을 이용하여 메서드로 이리저리 조작이 가능하게 만든 컬렉션이라면,  <br>
