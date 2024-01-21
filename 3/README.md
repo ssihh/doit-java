@@ -1,6 +1,6 @@
 3. 자료구조 <br>
 
-#### Deque<Node> mydeque = new LinkedList<>();
+#### Deque<.Node> mydeque = new LinkedList< >();
 static class Node{ <br>
 	public int index; public int value; <br>
 	Node(int index, int value){<br>
