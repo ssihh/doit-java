@@ -1,4 +1,13 @@
 3. 자료구조 <br>
+#### PriorityQueue<.Integer> pq = new PriorityQueue<>((o1, o2) -> {
+int first = Math.abs(o1);<br>
+int second = Math.abs(o2);<br>
+if(first == second) <br>
+ return o1 > o2 ? 1 : -1;<br>
+else<br>
+ return first - second; });<br>
+ //양수 리턴 작은 숫자 먼저 출력<br>
+<br>
 
 #### Queue<Integer> q = new LinkedList<>();
 q.poll(): 큐의 첫번째 요소를 삭제 및 반환<br>
