@@ -41,11 +41,11 @@ private static void Add(char s) {...} // 전역함수: private static void 함�
 <br>
 #### Swith(n) - case n:{ } 구문
 switch (s) { <br>
-			case 'A': { <br>
-				myArr[0]++; <br>
-				if (myArr[0] == checkArr[0]) { <br>
-					check4++;				} <br>
-				break;			} <br>
+　case 'A': { <br>
+　　myArr[0]++; <br>
+　　if (myArr[0] == checkArr[0]) { <br>
+　　　check4++;				} <br>
+　　　break;			} <br>
 <br>
 #### 메모리초과 (2018번 메모리 제한이 32MB 였음. 보통 128MB)
 해결: 배열을 선언할 때, 적당한 크기로 배열의 사이즈를 할당합니다. long->int <br>
