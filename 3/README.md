@@ -1,4 +1,4 @@
-3. 자료구조 <br>
+3. 자료구조 <br>　
 #### PriorityQueue<.Integer> pq = new PriorityQueue<>((o1, o2) -> {
 int first = Math.abs(o1);<br>
 int second = Math.abs(o2);<br>
@@ -45,7 +45,7 @@ switch (s) { <br>
 　　myArr[0]++; <br>
 　　if (myArr[0] == checkArr[0]) { <br>
 　　　check4++;				} <br>
-　　　break;			} <br>
+　　break;			} <br>
 <br>
 #### 메모리초과 (2018번 메모리 제한이 32MB 였음. 보통 128MB)
 해결: 배열을 선언할 때, 적당한 크기로 배열의 사이즈를 할당합니다. long->int <br>
