@@ -22,10 +22,10 @@ stack.pop();<br>
 <br>
 #### Deque<.Node> mydeque = new LinkedList< >();
 static class Node{ <br>
-	public int index; public int value; <br>
-	Node(int index, int value){<br>
- 		this.index = index;<br>
- 		this.value = value;	} }<br>
+　	public int index; public int value; <br>
+　	Node(int index, int value){<br>
+ 　　		this.index = index;<br>
+　　 		this.value = value;	} }<br>
 while( !mydeque.isEmpty() && mydeque.getLast().value > now ) { mydeque.removeLast(); }  <br>  
    <br>
 자바의 Linked List는 ArrayList와 같이 인덱스로 접근하여 조회 / 삽입이 가능하지만 내부 구조는 완전히 다르게 구성되어 있다는 점이 특징이다.  <br>
