@@ -3,9 +3,9 @@
 int first = Math.abs(o1);<br>
 int second = Math.abs(o2);<br>
 if(first == second) <br>
- return o1 > o2 ? 1 : -1;<br>
+　 return o1 > o2 ? 1 : -1;<br>
 else<br>
- return first - second; });<br>
+　 return first - second; });<br>
  //양수 리턴 작은 숫자 먼저 출력<br>
 <br>
 
