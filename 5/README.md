@@ -1,5 +1,23 @@
 5. 탐색 
 
+	private static void DFS(int v, int depth) {
+		if (depth == 5 || arrive) { //리턴으로 빠져나가면서 이미 도착한애가 arrive가 true면 딴데로 안가고 리턴해줌
+			arrive = true;
+			return;
+		}
+
+		visited[v] = true;
+		for (int i : a[v]) {
+			if(!visited[i]) {  //i: 인접리스트 a[i]노드와 연결된 '노드'
+				DFS(i, depth+1); 
+			}
+		}
+		
+		visited[v] = false; //역으로 빠져나올 때 노드를 false
+		//끝까지 가거나 이미 방문한 노드에서 뒤로 빠져나올 때 false로 바꿔줌
+
+	}
+
 #### 소수판별함수 암기
 static boolean isPrime(int num){<br>
  for(int i=2; num/2<= i; i++) // 2~num/2 까지 나누어지는 수가있으면 F<br>
