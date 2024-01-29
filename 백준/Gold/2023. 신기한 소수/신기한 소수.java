@@ -28,32 +28,33 @@ public class Main {
 
 	private static void DFS(int num, int jarisu) {
 		// TODO Auto-generated method stub
-		if(jarisu ==n) {
+		if(jarisu ==n) { //목표자리수일때
 			if(isPrime(num)) {
 				System.out.println(num); //소수면 숫자 출력
 			}
-			return;
+			return; //재귀함수 빠져나가
 		}
 		
 		for(int i=1; i<10; i++) {
 			if(i%2==0) {
 				continue; //짝수라면 더 이상 탐색할 필요가 없음
-			}
-			if(isPrime(num*10+i)) {
+			} //1,3,5,7,9
+			
+			if(isPrime(num*10+i)) { 
 				DFS(num*10+i, jarisu+1);
-			}
+			} //21,23,25... / 2
 		}
 	}
 
 
-	private static boolean isPrime(int num) { //소수 판변 암기
+	private static boolean isPrime(int num) { //소수 판별 암기
 		// TODO Auto-generated method stub
-		for(int i=2; i<num/2;i++) {
+		for(int i=2; i<num/2;i++) { // 2~num/2 까지 나누어지는 수가있으면 F
 			if(num%i==0) {
 				return false;
 			}
 		}
-		return true;
+		return true; //소수면 true
 	}
 
 }
