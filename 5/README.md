@@ -1,5 +1,7 @@
 5. 탐색 
 
+#### DFS 국룰
+
 	private static void DFS(int v, int depth) {
 		if (depth == 5 || arrive) { //리턴으로 빠져나가면서 이미 도착한애가 arrive가 true면 딴데로 안가고 리턴해줌
 			arrive = true;
