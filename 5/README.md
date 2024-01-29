@@ -4,7 +4,7 @@
 static boolean isPrime(int num){<br>
  for(int i=2; num/2<= i; i++) // 2~num/2 까지 나누어지는 수가있으면 F<br>
   if(num % i ==0)<br>
-   return false;<br>
+   return false;<br>
 return true; //소수면 true<br>
 }<br>
 
