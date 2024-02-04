@@ -4,7 +4,7 @@ import java.io.*;
 class Edge{ //class는 Main밖에다가 입력
 	int e; //목적지 노드 O
 	int value; //에지의 가중치 ㅡ 간선길이
-	public Edge(int e, int value) {
+	public Edge(int e, int value) { //i.o; | i.value;
 		this.e=e;
 		this.value = value;
 	}
@@ -66,16 +66,11 @@ public class Main {
 			}
 		}
 		
-		visited = new boolean[n+1];
+		visited = new boolean[n+1]; //6
 		distance = new int[n+1];
 		BFS(max);
-		for(int i=1;i<=n;i++) {
-			if(distance[max] < distance[i]) {
-				max=i; //트리의지름에 해당되는 2개의 노드중 하나로 시작점 설정
-			}
-		}
-		
-		System.out.println(distance[max]);
+		Arrays.sort(distance); //Array's'.어레이스
+		System.out.println(distance[n]); //0,1,2,3,4,5
 		
 		
 	}
@@ -89,7 +84,7 @@ public class Main {
 			int now = q.poll();
 			
 			for(Edge i : a[now]) {
-				int ne = i.e;
+				int ne = i.e;  //괄호 필요없네
 				int nv = i.value;
 				if(!visited[ne]) {
 					q.offer(ne);
