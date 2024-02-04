@@ -33,9 +33,9 @@ public class Main {
 
 		for (int i = 0; i < n; i++) {
 			st = new StringTokenizer(br.readLine());
-			String line = st.nextToken();
+			String s = st.nextToken(); //10110111
 			for (int j = 0; j < m; j++) { // 공백이 없어요
-				a[i][j] = Integer.parseInt(line.substring(j, j + 1));
+				a[i][j] = Integer.parseInt(s.substring(j, j + 1)); //1
 				;
 			}
 		}
@@ -53,9 +53,9 @@ public class Main {
 		while (!q.isEmpty()) {
 			int now[] = q.poll();
 
-			for (int k = 0; k < 4; k++) { // 상하좌우탐색을 위해 4번
-				int x = now[0] + dx[k]; // 첫번째[0]가 x값
-				int y = now[1] + dy[k]; // [1]가 y값
+			for (int d = 0; d < 4; d++) { // 상하좌우탐색을 위해 4번
+				int x = now[0] + dx[d]; // 첫번째[0]가 x값
+				int y = now[1] + dy[d]; // [1]가 y값
 				if (x >= 0 && y >= 0 && x < n && y < m) { //좌표 유효성 검사
 					if (a[x][y] != 0 && !visited[x][y]) { //갈 수 있는 칸 && 방문 검사하기
 						// 이제 갈 수 있는 곳이다.
@@ -72,22 +72,5 @@ public class Main {
 
 	}
 
-//	private static void DFS(int v, int depth) {
-//		// TODO Auto-generated method stub
-//
-//		visited[v] = true;
-//		System.out.print(v + " ");
-//
-//		for (int i : a[v]) {
-//			if (!visited[i]) { // i: 인접리스트 a[i]노드와 연결된 '노드'
-//				DFS(i, depth + 1);
-//
-//			}
-//		}
-//
-////		visited[v] = false; //역으로 빠져나올 때 노드를 false
-//		// 끝까지 가거나 이미 방문한 노드에서 뒤로 빠져나올 때 false로 바꿔줌
-//
-//	}
 
 }
