@@ -11,7 +11,7 @@
 
 		char[] s = new char[n]; // string
 		s = br.readLine().toCharArray();
-//		System.out.println(Arrays.toString(s));
+		// System.out.println(Arrays.toString(s));
 
 
 #### StringBuffer sb = new StringBuffer();
