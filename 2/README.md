@@ -1,5 +1,19 @@
 2. 입출력
 
+#### 띄어쓰기 없는 문자열
+
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+
+		int n = Integer.parseInt(st.nextToken());
+		int m = Integer.parseInt(st.nextToken());
+
+		char[] s = new char[n]; // string
+		s = br.readLine().toCharArray();
+//		System.out.println(Arrays.toString(s));
+
+
 #### StringBuffer sb = new StringBuffer();
 sb.append("+\n");<br>
 System.out.println(sb.toString);<br>
