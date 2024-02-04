@@ -54,7 +54,7 @@ static boolean isPrime(int num){<br>
    return false;<br>
  return true; //소수면 true<br>
 }<br>
-
+<br>
 #### boolean[] v = new boolean[n+1];
 boolean[] : 초기값 false<br>
 Boolean[] : 초기값 null<br>
