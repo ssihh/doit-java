@@ -1,6 +1,6 @@
 5. 탐색 
 
-### BFS dx,dy 미로 국룰 : q.offer(new int[] {i,j}); | 미로 탐색
+#### BFS dx,dy 미로 국룰 : q.offer(new int[ ] {i, j}); | 미로 탐색
 
 	static int[] dx = { 0, 1, 0, -1 };
 	static int[] dy = { 1, 0, -1, 0 }; // 상하좌우 탐색위한 배열선언
