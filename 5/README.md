@@ -17,10 +17,8 @@
 					q.offer(i); //q.offer(): 큐 맨뒤에 값 삽입
 					visited[i] = true; ////방문표시
 				}
-
 			}
 		}
-
 	}
 
 
