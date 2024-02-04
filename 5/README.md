@@ -22,10 +22,10 @@
 	}
 
 
-Queue<.Integer> q = new LinkedList<>();
-q.poll(): 큐의 첫번째 요소를 삭제 및 반환
-q.offer(): 큐 맨뒤에 값 삽입. add()는 큐가 꽉 찬 경우 IllegalStateException 에러 발생
-q.peek(): 큐 맨 앞의 값 반환
+Queue<.Integer> q = new LinkedList<>();<br>
+q.poll(): 큐의 첫번째 요소를 삭제 및 반환<br>
+q.offer(): 큐 맨뒤에 값 삽입. add()는 큐가 꽉 찬 경우 IllegalStateException 에러 발생<br>
+q.peek(): 큐 맨 앞의 값 반환<br>
 
 #### DFS 국룰
 
