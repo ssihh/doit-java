@@ -1,6 +1,6 @@
 2. 입출력
 
-#### 띄어쓰기 없는 문자열
+#### 띄어쓰기 없는 문자열 입력 : br.readLine().toCharArray();
 
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
