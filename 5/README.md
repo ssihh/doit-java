@@ -1,5 +1,36 @@
 5. 탐색 
 
+### BFS dx,dy 미로 국룰 : q.offer(new int[] {i,j}); | 미로 탐색
+
+	static int[] dx = { 0, 1, 0, -1 };
+	static int[] dy = { 1, 0, -1, 0 }; // 상하좌우 탐색위한 배열선언
+	static boolean[][] visited; // 방문도 차원
+	static int[][] a;
+	static int n, m;
+ 
+	private static void BFS(int i, int j) {
+		Queue<int[]> q = new LinkedList<>(); // 데이터가 두개들어가니까 배열로
+		q.offer(new int[] { i, j }); // 노드 처음시작점을 넣어주는것(0,0)
+		visited[i][j] = true; //방문 t
+		
+		while (!q.isEmpty()) {
+			int now[] = q.poll();
+
+			for (int k = 0; k < 4; k++) { // 상하좌우탐색을 위해 4번
+				int x = now[0] + dx[k]; // 첫번째[0]가 x값
+				int y = now[1] + dy[k]; // [1]가 y값
+				if (x >= 0 && y >= 0 && x < n && y < m) { //좌표 유효성 검사
+					if (a[x][y] != 0 && !visited[x][y]) { //갈 수 있는 칸 && 방문 검사하기
+						// 이제 갈 수 있는 곳이다.
+						q.offer(new int[] { x, y }); //넣어주고
+						visited[x][y] = true; //방문 t
+						a[x][y] = a[now[0]][now[1]] + 1; // 핵심: 시작점에서 자기자신까지 오는 최단거리
+
+					}
+				}
+			}
+		}
+	}
 
 #### BFS 국룰
 
