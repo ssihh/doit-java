@@ -14,7 +14,17 @@
 		// System.out.println(Arrays.toString(s));
 
 
-#### StringBuffer sb = new StringBuffer();
+#### StringBuffer sb = new StringBuffer(); | 스택 수열 +,-
+		StringBuffer sb = new StringBuffer();
+		sb.append("+\n");
+		sb.append("-\n");
+
+			System.out.println("NO");
+			break; //for문 탈출
+
+		if(psb) { System.out.println(sb.toString()); }
+
+
 sb.append("+\n");<br>
 System.out.println(sb.toString);<br>
 StringBuffer는 가변(mutable)한 문자열을 처리하기 위한 클래스입니다. <br>
