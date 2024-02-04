@@ -1,6 +1,6 @@
 2. 입출력
 
-#### 띄어쓰기 없는 문자열 입력 : br.readLine().toCharArray();
+#### 띄어쓰기 없는 문자열 입력 : br.readLine().toCharArray(); | DNA 비밀번호
 
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
