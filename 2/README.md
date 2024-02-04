@@ -46,8 +46,8 @@ br.close(); //BufferedReader를 더 이상 사용할 필요가 없게 되면 clo
 // BufferedReader: 컴퓨팅에서 버퍼는 데이터를 한 곳에서 다른 한 곳으로 전송하는 동안 일시적으로 그 데이터를 보관하는 메모리의 영역이다.<br>
 // InputStreamReader: 문자단위(character) 데이터로 변환시키는 중간다리 역할을 한다. <br>
 // System.in: 값을 입력받는 클래스 <br>
-		
 <br>
+
 #### StringTokenizer
 StringTokenizer st = new StringTokenizer(br.readLine());  //readLine(): 한줄 읽어오기 <br>
 // StringTokenizer: 문자열을 우리가 지정한 구분자로 문자열을 쪼개주는 클래스입니다. <br>
