@@ -16,9 +16,9 @@
 		while (!q.isEmpty()) {
 			int now[] = q.poll();
 
-			for (int k = 0; k < 4; k++) { // 상하좌우탐색을 위해 4번
-				int x = now[0] + dx[k]; // 첫번째[0]가 x값
-				int y = now[1] + dy[k]; // [1]가 y값
+			for (int d = 0; d < 4; d++) { // 상하좌우탐색을 위해 4번
+				int x = now[0] + dx[d]; // 첫번째[0]가 x값
+				int y = now[1] + dy[d]; // [1]가 y값
 				if (x >= 0 && y >= 0 && x < n && y < m) { //좌표 유효성 검사
 					if (a[x][y] != 0 && !visited[x][y]) { //갈 수 있는 칸 && 방문 검사하기
 						// 이제 갈 수 있는 곳이다.
