@@ -1,5 +1,34 @@
 5. 탐색 
 
+
+#### BFS 국룰
+
+	private static void BFS(int v, int b) {
+ 		Queue<Integer> q = new LinkedList<>(); // 큐 선언
+		q.offer(v); //먼저 값 하나 넣어주고 q.offer(): 큐 맨뒤에 값 삽입
+		visited[v] = true; //방문표시
+
+		while (!q.isEmpty()) { //q가 비워지면 끝남
+			int now = q.poll(); // now에 담아서 출력도 하고 인접리스트 방문 | q.poll(): 큐의 첫번째 요소를 삭제 및 반환
+			System.out.print(now + " ");
+
+			for (int i : a[now]) { // 인접리스트 방문
+				if (!visited[i]) { //방문하지 않았던 노드라면 실행
+					q.offer(i); //q.offer(): 큐 맨뒤에 값 삽입
+					visited[i] = true; ////방문표시
+				}
+
+			}
+		}
+
+	}
+
+
+Queue<.Integer> q = new LinkedList<>();
+q.poll(): 큐의 첫번째 요소를 삭제 및 반환
+q.offer(): 큐 맨뒤에 값 삽입. add()는 큐가 꽉 찬 경우 IllegalStateException 에러 발생
+q.peek(): 큐 맨 앞의 값 반환
+
 #### DFS 국룰
 
 	private static void DFS(int v, int depth) {
@@ -11,7 +40,7 @@
 		visited[v] = true;
 		for (int i : a[v]) {
 			if(!visited[i]) {  //i: 인접리스트 a[i]노드와 연결된 '노드'
-				DFS(i, depth+1); 
+				DFS(i, depth+1); //재귀함수 깊이우선
 			}
 		}
 		
