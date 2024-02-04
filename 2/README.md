@@ -1,5 +1,15 @@
 2. 입출력
 
+#### 띄어쓰기 없는 2차원배열 입력 : br.readLine().toCharArray(); | 미로탐색 BFS
+		for (int i = 0; i < n; i++) {
+			st = new StringTokenizer(br.readLine());
+			String s = st.nextToken(); //10110111
+			for (int j = 0; j < m; j++) { // 공백이 없어요
+				a[i][j] = Integer.parseInt(s.substring(j, j + 1)); //1
+				;
+			}
+		}
+
 #### 띄어쓰기 없는 문자열 입력 : br.readLine().toCharArray(); | DNA 비밀번호
 
 
