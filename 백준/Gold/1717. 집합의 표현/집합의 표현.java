@@ -28,16 +28,24 @@ public class Main {
 				checkSame(a,b);
 			}
 		}
-		
+		/*
+		[0]	0	
+		[1]	1	
+		[2]	4	
+		[3]	1	
+		[4]	4	
+		[5]	5	
+		[6]	7	
+		[7]	1	
+		*/
 
 	}
 	private static void union(int a, int b) {
 		//대표노드를 찾아서 연결
-		int ua = find(a);
-		int ub = find(b);
-		int min = Math.min(ua,  ub);
-		if(ua!=ub) {
-			parent[ub] = ua; 
+		a = find(a);
+		b = find(b);
+		if(a!=b) {
+			parent[b] = a; 
 		}
 		
 	}
@@ -54,7 +62,7 @@ public class Main {
 	}
 
 	private static void checkSame(int a, int b) {
-		if(find(a)==find(b)) { //대표노드가 같은 원소a,b인가? | parent 아님!!! find로 대표노드값 업데이트 치면서 확인
+		if(find(a)==find(b)) { //대표노드가 같은 원소a,b인가?
 			System.out.println("YES");
 		}
 		else {
@@ -63,3 +71,4 @@ public class Main {
 	}
 
 }
+
