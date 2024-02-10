@@ -54,7 +54,7 @@ public class Main {
 	}
 
 	private static void checkSame(int a, int b) {
-		if(find(a)==find(b)) {
+		if(find(a)==find(b)) { //대표노드가 같은 원소a,b인가? | parent 아님!!! find로 대표노드값 업데이트 치면서 확인
 			System.out.println("YES");
 		}
 		else {
