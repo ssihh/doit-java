@@ -15,6 +15,8 @@ new ArrayList<>() 통일.ver
 	a[i] = new ArrayList<Integer>(); //크기없이 타입만 선언 소괄호<br>
      	
 
+<br>
+
 ### 8-3. 위상정렬 & 진입차수(Indegree) | 인접리스트, 큐 
 
 
