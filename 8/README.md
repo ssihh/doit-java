@@ -44,3 +44,32 @@
 
 ### 8-2. 유니온(Union) & 파인드(Find) | 재귀함수
 
+	private static void union(int a, int b) {
+		//대표노드를 찾아서 연결
+		a = find(a);
+		b = find(b);
+		if(a!=b) {
+			parent[b] = a; 
+		}
+		
+	}
+	
+	private static int find(int i) {
+		if(i == parent[i]) {
+			return i;
+		}
+		else {
+			return parent[i] = find(parent[i]);
+			//경로압축 로직: 빠져나올때마다 그때의 대표노드 값을 업데이트
+		}
+		
+	}
+
+	private static void checkSame(int a, int b) {
+		if(find(a)==find(b)) { //대표노드가 같은 원소a,b인가?
+			System.out.println("YES");
+		}
+		else {
+			System.out.println("NO");
+		}
+	}
