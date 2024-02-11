@@ -1,5 +1,58 @@
 5. 탐색 
 
+#### 트리의 지름
+
+
+	class Edge{ //class는 Main밖에다가 입력
+		int e; //목적지 노드 O
+		int value; //에지의 가중치 ㅡ 간선길이
+		public Edge(int e, int value) { //i.o; | i.value;
+			this.e=e;
+			this.value = value;
+		}
+	}
+
+	static ArrayList<Edge>[] a;
+	a = new ArrayList[n+1]; //노드 개수만큼
+	for(int i =1; i<n+1;i++) {
+		a[i]=new ArrayList<Edge>();
+	}
+		
+	for(int j=0;j<n;j++) { //A인접리스트에 그래프 데이터 저장하기
+		int s = sc.nextInt(); //start
+		while(true) {
+			int e=sc.nextInt(); //end
+			if(e==-1) {
+				break;
+			}
+			int value = sc.nextInt();
+			a[s].add(new Edge(e, value)); 
+		}
+	}
+
+	private static void BFS(int node) {
+		Queue<Integer> q = new LinkedList<>(); // 데이터가 두개들어가니까 배열로
+		q.offer(node); // 노드 처음시작점을 넣어주는것(0,0)
+		visited[node] = true; //방문 t
+		
+		while (!q.isEmpty()) {
+			int now = q.poll();
+			
+			for(Edge i : a[now]) {
+				int ne = i.e;  //괄호 필요없네
+				int nv = i.value;
+				if(!visited[ne]) {
+					q.offer(ne);
+					visited[ne]=true;
+					distance[ne]= distance[now] + nv;
+				}
+				
+			}
+
+		}
+	}
+
+
 #### BFS dx,dy 미로 국룰 : q.offer(new int[ ] {i, j}); | 미로 탐색
 
 	static int[] dx = { 0, 1, 0, -1 };
