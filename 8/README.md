@@ -9,7 +9,7 @@ new ArrayList<>() 통일.ver
             A.add(new ArrayList<>());
 	}
 
-크기 선언.ver
+[n+1]크기 선언.ver
 
 	ArrayList<Integer>[] a = new ArrayList[n+1]; //크기선언해줄때 대괄호<br>
 	a[i] = new ArrayList<Integer>(); //크기없이 타입만 선언 소괄호<br>
