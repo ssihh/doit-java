@@ -1,5 +1,20 @@
 8. 그래프
 
+### 인접리스트 
+
+new ArrayList<>() 통일.ver
+
+	ArrayList<ArrayList<Integer>> A = new ArrayList<>();
+        for (int i = 0; i <= N; i++) {
+            A.add(new ArrayList<>());
+	}
+
+크기 선언.ver
+
+	ArrayList<Integer>[] a = new ArrayList[n+1]; //크기선언해줄때 대괄호<br>
+	a[i] = new ArrayList<Integer>(); //크기없이 타입만 선언 소괄호<br>
+     	
+
 ### 8-3. 위상정렬 & 진입차수(Indegree) | 인접리스트, 큐 
 
 
