@@ -64,6 +64,7 @@ StringTokenizer st = new StringTokenizer(br.readLine());  //readLine(): 한줄 �
 
 int n = Integer.parseInt(st.nextToken()); //첫번째값. 값 받아오기전 readline으로 줄 읽어와야험 <br>
 int m = Integer.parseInt(st.nextToken()); //두번째값 받아옴 <br>
+빨간 밑줄 생길 때 이클립스 껏다 켜주면 해결
 <br>
 
 #### Scanner
