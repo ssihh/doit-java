@@ -1,6 +1,6 @@
 5. 탐색 
 
-#### 트리의 지름
+#### 트리의 지름 : Edge(e, value) Class 생성
 
 
 	class Edge{ //class는 Main밖에다가 입력
