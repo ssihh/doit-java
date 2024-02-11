@@ -2,17 +2,36 @@
 
 ### 인접리스트 
 
-new ArrayList<>() 통일.ver
+new ArrayList<>() 통일.ver : a.get(s).add(e)
 
 	ArrayList<ArrayList<Integer>> A = new ArrayList<>();
         for (int i = 0; i <= N; i++) {
             A.add(new ArrayList<>());
 	}
+ 	for (int i = 1; i <= N; i++) {
+	      while (true) { // 인접리스트 초기화
+	        int preTemp = Integer.parseInt(st.nextToken());
+	        if (preTemp == -1)
+	          break;
+	        A.get(preTemp).add(i);
+	        indegree[i]++; // 진입차수 배열 초기화
+	      }
+	    }
 
-[n+1]크기 선언.ver
+[n+1]크기 선언.ver : a[s].add(e);
 
-	ArrayList<Integer>[] a = new ArrayList[n+1]; //크기선언해줄때 대괄호<br>
-	a[i] = new ArrayList<Integer>(); //크기없이 타입만 선언 소괄호<br>
+	a = new ArrayList[n+1]; //인접리스트
+	for(int i=1; i<=n;i++) {
+		a[i] = new ArrayList<Integer>(); //인접리스트
+	}
+	
+	for(int j=0; j<m; j++) {
+		int s = sc.nextInt();
+		int e = sc.nextInt();
+		a[s].add(e);
+		indegree[e]++;
+	}
+
      	
 
 <br>
