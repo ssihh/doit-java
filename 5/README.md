@@ -85,6 +85,12 @@
 		}
 	}
 
+#### Collections.sort() 와 Arrays.sort() 차이 | DFS와 BFS
+Collections.sort(): 컬렉션(List,Set..)을 정렬. Ex) ArrayList<>() a; <br>
+Arrays.sort(): 보편적으로 배열을 정렬<br>
+<br>
+
+
 #### BFS 국룰
 
 	private static void BFS(int v, int b) {
