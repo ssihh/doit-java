@@ -1,73 +1,69 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 public class Main {
 
 	static ArrayList<Integer>[] a;
 	static boolean[] visited;
-	static boolean arrive;
+	static int n;
+	static int answer;
 
 	public static void main(String[] args) throws IOException {
-		// 들어오는 데이터가 많을 때는 Scanner보다 br이 시간복잡도에서 유리
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//		// 출력을 버퍼에 넣고 한번에 출력하기 위해 BufferedWriter사용
-//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-//		
-		int n = Integer.parseInt(st.nextToken());
+		n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
-//		int n = Integer.parseInt(br.readLine()); //br만 선언해서 한줄씩
 
-//		Scanner sc = new Scanner(System.in);
-//		n = sc.nextInt();
+		// 인접리스트
 		a = new ArrayList[n];
+		for (int i = 0; i < n; i++) {
+			a[i] = new ArrayList<Integer>();
+		}
+
+		//초기화
+		for(int i = 0; i<m; i++) {
+			st = new StringTokenizer(br.readLine());
+			int u = Integer.parseInt(st.nextToken());
+			int v = Integer.parseInt(st.nextToken());
+			a[u].add(v);
+			a[v].add(u);
+			
+		}
+		
+		// 방문 배열
 		visited = new boolean[n];
 
-		for (int i = 0; i < n; i++) {
-			a[i] = new ArrayList<Integer>();// 인접리스트 초기화하기
-		}
-
-		for (int j = 0; j < m; j++) {
-			st = new StringTokenizer(br.readLine());
-			int s = Integer.parseInt(st.nextToken());
-			int e = Integer.parseInt(st.nextToken());
-			a[s].add(e);
-			a[e].add(s);
-		}
-
-		arrive = false;
-		for (int k = 0; k < n; k++) {
-			DFS(k, 1);
-			if (arrive) {
-				break; //이미 5개 도달했으면 다음 노드 DFS 그만하고 for문 탈출
+		// answer 1,0
+		answer = 0; 
+		
+		// DFS실행
+		for(int i=0; i<n; i++) {
+			if(answer==1) break; //5명 count해서 1되면 탈출
+			if(!visited[i]) {
+				DFS(i, 1);
 			}
 		}
 
-		if(arrive) {
-			System.out.println(1);
-		}
-		else {
-			System.out.println(0);
-		}
-		
+		System.out.println(answer);
+
 	}
 
-	private static void DFS(int v, int depth) {
-		// TODO Auto-generated method stub
-		if (depth == 5 || arrive) { //리턴으로 빠져나가면서 이미 도착한애가 arrive가 true면 딴데로 안가고 리턴해줌
-			arrive = true;
+	private static void DFS(int v, int count) {
+
+		if(count==5) {
+			answer=1; //5명 돼면 answer 1
 			return;
 		}
-
-		visited[v] = true;
-		for (int i : a[v]) {
-			if(!visited[i]) {  //i: 인접리스트 a[i]노드와 연결된 '노드'
-				DFS(i, depth+1); 
+		
+		visited[v]=true;
+		
+		for(int i : a[v]) {
+			if(!visited[i]) {
+				DFS(i, count+1);
 			}
 		}
 		
-		visited[v] = false; //역으로 빠져나올 때 노드를 false
-		//끝까지 가거나 이미 방문한 노드에서 뒤로 빠져나올 때 false로 바꿔줌
+		visited[v]=false; //이거 해주니까 됨 나오면서 문닫?..
 
 	}
 
