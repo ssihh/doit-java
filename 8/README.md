@@ -1,5 +1,13 @@
 8. 그래프
 
+### 다익스트라 : 그래프에서 최단거리를 구하는 알고리즘, 에지가 모두 양수 일 때
+int 최댓값 리턴: Integer.MAX_VALUE;
+
+    for (int i = 0; i <= V; i++) {
+      distance[i] = Integer.MAX_VALUE;
+    }
+
+
 ### 인접리스트 
 
 new ArrayList<>() 통일.ver : a.get(s).add(e)
