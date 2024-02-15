@@ -11,7 +11,7 @@ class Solution {
             if (lev < 5) { //lev 0
                 create_words(lev+1, str.concat(alpha[i])); //A
             }
-            else return;
+            else break;
         }
     }
     
