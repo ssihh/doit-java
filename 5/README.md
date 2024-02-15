@@ -2,6 +2,26 @@
 
 #### 23. 연결 요소의 개수 구하기
 - void 타입 메소드에 return 키워드가 사용되었다면, 이는 값을 반환 하는 것이 아니라 메소드를 종료 하는 것입니다.
+- next의 방문 체크 후 DFS 재귀
+
+		public static void DFS(int i) {
+			if(visited[i]) {
+				return; //메소드를 종료
+			}
+			
+		visited[i]=true;
+		
+		for(int next : a[i]) {
+			if(!visited[next]) { //아잇 당연히 next의 방문을 체크해야지
+				DFS(next);
+
+- 인접리스트 대괄호[ㄷ] 
+
+		ArrayList<.Integer>[] a = new ArrayList[n+1]; //크기선언해줄때 대괄호<br>
+		a[i] = new ArrayList<.Integer>(); //크기없이 타입만 선언 소괄호<br>
+
+
+<br>
 
 #### 트리의 지름 : Edge(e, value) Class 생성
 
@@ -155,7 +175,4 @@ boolean[] : 초기값 false<br>
 Boolean[] : 초기값 null<br>
 <br>
 
-#### 인접리스트
-ArrayList<.Integer>[] a = new ArrayList[n+1]; //크기선언해줄때 대괄호<br>
-a[i] = new ArrayList<.Integer>(); //크기없이 타입만 선언 소괄호<br>
-<br>
+
