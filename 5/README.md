@@ -3,6 +3,7 @@
 #### 23. 연결 요소의 개수 구하기
 - void 타입 메소드에 return 키워드가 사용되었다면, 이는 값을 반환 하는 것이 아니라 메소드를 종료 하는 것입니다.
 - next의 방문 체크 후 DFS 재귀
+- DFS ([return], for, if, DFS)
 
 		public static void DFS(int i) {
 			if(visited[i]) {
@@ -79,6 +80,32 @@
 
 <br>
 
+#### 28. DFS와 BFS : Collections.sort(arraylist)
+- Collections.sort(a[i]) : 배열아닌 ArrayList<Integer>의 정렬
+
+		for(int i=1; i<=n; i++) {
+			Collections.sort(a[i]);
+		}
+
+  
+- BFS 국룰 (Q, while, for, if)
+
+		private static void BFS(int v, int b) {
+	 		Queue<Integer> q = new LinkedList<>(); // 큐 선언
+			q.offer(v); //먼저 값 하나 넣어주고 q.offer(): 큐 맨뒤에 값 삽입
+			visited[v] = true; //방문표시
+	
+			while (!q.isEmpty()) { //q가 비워지면 끝남
+				int now = q.poll(); // now에 담아서 출력도 하고 인접리스트 방문 | q.poll(): 큐의 첫번째 요소를 삭제 및 반환
+				System.out.print(now + " ");
+	
+				for (int i : a[now]) { // 인접리스트 방문
+					if (!visited[i]) { //방문하지 않았던 노드라면 실행
+						q.offer(i); //q.offer(): 큐 맨뒤에 값 삽입
+						visited[i] = true; ////방문표시
+					}		}		}		}
+
+<br>
 
 #### 27. 미로탐색 : q.offer(new int[ ] {i, j});
 - Queue<int[]> q : 좌표 값 넣기위한 int[] 배열타입 큐
@@ -173,40 +200,10 @@
 <br>
 
 
-#### Collections.sort() 와 Arrays.sort() 차이 | DFS와 BFS
-Collections.sort(): 컬렉션(List,Set..)을 정렬. Ex) ArrayList<>() a; <br>
-Arrays.sort(): 보편적으로 배열을 정렬<br>
-<br>
-
-
-#### BFS 국룰
-
-	private static void BFS(int v, int b) {
- 		Queue<Integer> q = new LinkedList<>(); // 큐 선언
-		q.offer(v); //먼저 값 하나 넣어주고 q.offer(): 큐 맨뒤에 값 삽입
-		visited[v] = true; //방문표시
-
-		while (!q.isEmpty()) { //q가 비워지면 끝남
-			int now = q.poll(); // now에 담아서 출력도 하고 인접리스트 방문 | q.poll(): 큐의 첫번째 요소를 삭제 및 반환
-			System.out.print(now + " ");
-
-			for (int i : a[now]) { // 인접리스트 방문
-				if (!visited[i]) { //방문하지 않았던 노드라면 실행
-					q.offer(i); //q.offer(): 큐 맨뒤에 값 삽입
-					visited[i] = true; ////방문표시
-				}
-			}
-		}
-	}
-
-
-
-Queue<.Integer> q = new LinkedList<>();<br>
+# Queue<.Integer> q = new LinkedList<>();<br>
 q.poll(): 큐의 첫번째 요소를 삭제 및 반환<br>
 q.offer(): 큐 맨뒤에 값 삽입. offer()은 큐만 해당! add()는 큐가 꽉 찬 경우 IllegalStateException 에러 발생<br>
 q.peek(): 큐 맨 앞의 값 반환<br>
-
-
 
 
 #### boolean[] v = new boolean[n+1];
