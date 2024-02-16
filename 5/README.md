@@ -23,6 +23,39 @@
 
 <br>
 
+#### 24. 신기한 소수 찾기 : 소수 판별 함수, 인자값 사용
+- 소수 판별 함수 isPrime(i)
+1) <=Math.sqrt : 제곱근 이하 까지
+2) num % i == 0 이면 return false : 나눠지면 소수 아님
+
+		public static boolean isPrime(int num) {
+	
+			// 나눌 범위 초기값 0,1이면 다 나눠지니까 안댐! 2부터
+			for (int i = 2; i <= Math.sqrt(num); i++) { // 제곱근이하<=까지
+				if (num % i == 0) {
+					return false; // 나눠지면 소수아님 false
+				}
+			}
+			return true;		}
+
+1) void 타입 메소드에 return 키워드가 사용: 메소드를 종료 하는 것입니다.
+2) jari == n : 인자값 사용. 상수 4 사용 아님
+
+		public static void DFS(int jari, int num) {
+			if (jari == n) { // n 인자값 사용
+				System.out.println(num);
+				return; //메소드 종료
+			}
+	
+			for (int i = 1; i < 10; i += 2) { // 2씩증가 홀수
+				if (isPrime(num * 10 + i)) {
+					DFS(jari + 1, num * 10 + i);
+				}
+			}	}
+
+<br>
+
+
 #### 25. 친구 관계 파악하기 : 방문한 노드에서 빠져나올 때 visited[false]
 - 방문노드에서 빠져나올 때 visited[i] = false 해주는건 깊이를 count할 때 필요. 단순 방문 용도면 불필요.
 - 도착 인자 활용 boolean arrive;
@@ -166,14 +199,6 @@ q.offer(): 큐 맨뒤에 값 삽입. offer()은 큐만 해당! add()는 큐가 �
 q.peek(): 큐 맨 앞의 값 반환<br>
 
 
-#### 소수판별함수 암기
-static boolean isPrime(int num){<br>
- for(int i=2; num/2<= i; i++) // 2~num/2 까지 나누어지는 수가있으면 F<br>
-  if(num % i ==0)<br>
-   return false;<br>
- return true; //소수면 true<br>
-}<br>
-<br>
 #### boolean[] v = new boolean[n+1];
 boolean[] : 초기값 false<br>
 Boolean[] : 초기값 null<br>
