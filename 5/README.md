@@ -80,73 +80,46 @@
 <br>
 
 
-#### BFS dx,dy 미로 국룰 : q.offer(new int[ ] {i, j}); | 미로 탐색
+#### 27. 미로탐색 : q.offer(new int[ ] {i, j});
+- Queue<int[]> q : 좌표 값 넣기위한 int[] 배열타입 큐
+- q.offer(new int[] {x,y}); : q에 배열 값 넣을 때
+- 지도에 바로바로 +1 count 해주고 목표 좌표값 출력
 
-	static int[] dx = { 0, 1, 0, -1 };
-	static int[] dy = { 1, 0, -1, 0 }; // 상하좌우 탐색위한 배열선언
-	static boolean[][] visited; // 방문도 차원
-	static int[][] a;
-	static int n, m;
- 
-	private static void BFS(int i, int j) {
-		Queue<int[]> q = new LinkedList<>(); // 데이터가 두개들어가니까 배열로
-		q.offer(new int[] { i, j }); // 노드 처음시작점을 넣어주는것(0,0)
-		visited[i][j] = true; //방문 t
-		
-		while (!q.isEmpty()) {
-			int now[] = q.poll();
+	  	public static void BFS(int x, int y) {
+			 Queue<int[]> q = new LinkedList<>(); //int[] int 배열 큐
+			 q.offer(new int[] {x,y}); // 큐에 int 배열 넣기
+	  		 visited[x][y]=true;
+			 
+			 int[] dx = {0,0,-1,1};
+			 int[] dy = {1,-1,0,0};
+			 
+			 while(!q.isEmpty()) {
+				 int[] crt = q.poll();
+				 int cx = crt[0];
+				 int cy = crt[1];
+				 for(int i=0; i<4; i++) {
+					 int nx = cx + dx[i];
+					 int ny = cy + dy[i];
+					 if(nx>=0 && ny>=0 && nx<n && ny<m) {
+						 if(map[nx][ny]==1 && !visited[nx][ny]) {
+							 q.offer(new int[] {nx, ny});
+							 map[nx][ny] = map[cx][cy] + 1; //지도에 +1 카운트 표시
+							 if(nx==n-1 && ny==m-1) return; // 목표 도달 메소드 종료
+						 }
+					 }
+				 }
 
-			for (int d = 0; d < 4; d++) { // 상하좌우탐색을 위해 4번
-				int x = now[0] + dx[d]; // 첫번째[0]가 x값
-				int y = now[1] + dy[d]; // [1]가 y값
-				if (x >= 0 && y >= 0 && x < n && y < m) { //좌표 유효성 검사
-					if (a[x][y] != 0 && !visited[x][y]) { //갈 수 있는 칸 && 방문 검사하기
-						// 이제 갈 수 있는 곳이다.
-						q.offer(new int[] { x, y }); //넣어주고
-						visited[x][y] = true; //방문 t
-						a[x][y] = a[now[0]][now[1]] + 1; // 핵심: 시작점에서 자기자신까지 오는 최단거리
-
-					}
-				}
+- 띄어쓰기 없는 지도 입력 받을 때
+  
+		map = new int[n][m];		
+		for(int i=0; i<n; i++) {
+			String s = br.readLine(); // 한줄 읽어와서
+			for(int j=0; j<m; j++) {
+				map[i][j]= s.charAt(j) - '0'; //시간줄임 substring안쓰고
 			}
 		}
-	}
 
 <br>
-
-#### Collections.sort() 와 Arrays.sort() 차이 | DFS와 BFS
-Collections.sort(): 컬렉션(List,Set..)을 정렬. Ex) ArrayList<>() a; <br>
-Arrays.sort(): 보편적으로 배열을 정렬<br>
-<br>
-
-
-#### BFS 국룰
-
-	private static void BFS(int v, int b) {
- 		Queue<Integer> q = new LinkedList<>(); // 큐 선언
-		q.offer(v); //먼저 값 하나 넣어주고 q.offer(): 큐 맨뒤에 값 삽입
-		visited[v] = true; //방문표시
-
-		while (!q.isEmpty()) { //q가 비워지면 끝남
-			int now = q.poll(); // now에 담아서 출력도 하고 인접리스트 방문 | q.poll(): 큐의 첫번째 요소를 삭제 및 반환
-			System.out.print(now + " ");
-
-			for (int i : a[now]) { // 인접리스트 방문
-				if (!visited[i]) { //방문하지 않았던 노드라면 실행
-					q.offer(i); //q.offer(): 큐 맨뒤에 값 삽입
-					visited[i] = true; ////방문표시
-				}
-			}
-		}
-	}
-
-
-
-Queue<.Integer> q = new LinkedList<>();<br>
-q.poll(): 큐의 첫번째 요소를 삭제 및 반환<br>
-q.offer(): 큐 맨뒤에 값 삽입. offer()은 큐만 해당! add()는 큐가 꽉 찬 경우 IllegalStateException 에러 발생<br>
-q.peek(): 큐 맨 앞의 값 반환<br>
-
 
 #### 28. 트리의 지름 : Edge(e, value) Class 생성
 - maxi , distance[maxi] : 인덱스에는 명칭뒤에 i 붙이기. 값이랑 비교해야함. 인덱스 비교X
@@ -184,7 +157,7 @@ q.peek(): 큐 맨 앞의 값 반환<br>
 
 		public static void BFS(int num) {
 			Queue<Integer> q = new LinkedList<>();
-			q.offer(num); //큐 인티저?
+			q.offer(num); //큐 인티저? ㄴㄴ
 			visited[num]=true;
 			
 			while(!q.isEmpty()) {
@@ -198,6 +171,43 @@ q.peek(): 큐 맨 앞의 값 반환<br>
 
 
 <br>
+
+
+#### Collections.sort() 와 Arrays.sort() 차이 | DFS와 BFS
+Collections.sort(): 컬렉션(List,Set..)을 정렬. Ex) ArrayList<>() a; <br>
+Arrays.sort(): 보편적으로 배열을 정렬<br>
+<br>
+
+
+#### BFS 국룰
+
+	private static void BFS(int v, int b) {
+ 		Queue<Integer> q = new LinkedList<>(); // 큐 선언
+		q.offer(v); //먼저 값 하나 넣어주고 q.offer(): 큐 맨뒤에 값 삽입
+		visited[v] = true; //방문표시
+
+		while (!q.isEmpty()) { //q가 비워지면 끝남
+			int now = q.poll(); // now에 담아서 출력도 하고 인접리스트 방문 | q.poll(): 큐의 첫번째 요소를 삭제 및 반환
+			System.out.print(now + " ");
+
+			for (int i : a[now]) { // 인접리스트 방문
+				if (!visited[i]) { //방문하지 않았던 노드라면 실행
+					q.offer(i); //q.offer(): 큐 맨뒤에 값 삽입
+					visited[i] = true; ////방문표시
+				}
+			}
+		}
+	}
+
+
+
+Queue<.Integer> q = new LinkedList<>();<br>
+q.poll(): 큐의 첫번째 요소를 삭제 및 반환<br>
+q.offer(): 큐 맨뒤에 값 삽입. offer()은 큐만 해당! add()는 큐가 꽉 찬 경우 IllegalStateException 에러 발생<br>
+q.peek(): 큐 맨 앞의 값 반환<br>
+
+
+
 
 #### boolean[] v = new boolean[n+1];
 boolean[] : 초기값 false<br>
