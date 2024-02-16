@@ -1,57 +1,44 @@
-import java.io.*;
 import java.util.*;
+import java.io.*;
 
-public class Main {
+class Main {
 
-	static ArrayList<Integer>[] a;
-	static boolean[] visited;
-	static int n;
+	public static int n;
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		n = Integer.parseInt(st.nextToken());
-//		int m = Integer.parseInt(st.nextToken());
-
-		// 인접리스트
-		a = new ArrayList[n + 1];
-		for (int i = 1; i <= n; i++) {
-			a[i] = new ArrayList<Integer>();
-		}
-
-		// 방문 배열
-		visited = new boolean[n + 1];
-
-		// (소수, 1번째 자리수부터 체크)
-		DFS(2, 1);
-		DFS(3, 1);
-		DFS(5, 1);
-		DFS(7, 1);
-
-	}
-
-	private static void DFS(int num, int jari) {
-		if (jari == n) { //4자리수 일때 출력
+	public static void DFS(int jari, int num) {
+		if (jari == n) { // n 인자값 사용
 			System.out.println(num);
 			return;
 		}
 
-		for (int i = 1; i <= 9; i++) {
-			if (i % 2 != 0 && isPrime(num * 10 + i)) { 
-				DFS(num * 10 + i, jari + 1); //소수일때 자리수++해서 재귀 실행
+		for (int i = 1; i < 10; i += 2) { // 2씩증가 홀수
+			if (isPrime(num * 10 + i)) {
+				DFS(jari + 1, num * 10 + i);
 			}
 		}
-
 	}
 
-	private static boolean isPrime(int num) {
-		for (int i = 2; i <= num / 2; i++) {
+	public static boolean isPrime(int num) {
+
+		// 나눌 범위 초기값 0,1이면 다 나눠지니까 안댐! 2부터
+		for (int i = 2; i <= Math.sqrt(num); i++) { // 제곱근이하<=까지
 			if (num % i == 0) {
-				return false;
+				return false; // 나눠지면 소수아님 false
 			}
 		}
 		return true;
-
 	}
 
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // Reader 3
+		StringTokenizer st = new StringTokenizer(br.readLine()); // 왜 빨간줄? IOException 아하
+
+		n = Integer.parseInt(st.nextToken());
+
+		DFS(1, 2);
+		DFS(1, 3);
+		DFS(1, 5);
+		DFS(1, 7);
+
+	}
 }
