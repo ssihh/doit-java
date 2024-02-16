@@ -79,58 +79,6 @@
 
 <br>
 
-#### 트리의 지름 : Edge(e, value) Class 생성
-
-
-	class Edge{ //class는 Main밖에다가 입력
-		int e; //목적지 노드 O
-		int value; //에지의 가중치 ㅡ 간선길이
-		public Edge(int e, int value) { //i.o; | i.value;
-			this.e=e;
-			this.value = value;
-		}
-	}
-
-	static ArrayList<Edge>[] a;
-	a = new ArrayList[n+1]; //노드 개수만큼
-	for(int i =1; i<n+1;i++) {
-		a[i]=new ArrayList<Edge>();
-	}
-		
-	for(int j=0;j<n;j++) { //A인접리스트에 그래프 데이터 저장하기
-		int s = sc.nextInt(); //start
-		while(true) {
-			int e=sc.nextInt(); //end
-			if(e==-1) {
-				break;
-			}
-			int value = sc.nextInt();
-			a[s].add(new Edge(e, value)); 
-		}
-	}
-
-	private static void BFS(int node) {
-		Queue<Integer> q = new LinkedList<>(); // 데이터가 두개들어가니까 배열로
-		q.offer(node); // 노드 처음시작점을 넣어주는것(0,0)
-		visited[node] = true; //방문 t
-		
-		while (!q.isEmpty()) {
-			int now = q.poll();
-			
-			for(Edge i : a[now]) {
-				int ne = i.e;  //괄호 필요없네
-				int nv = i.value;
-				if(!visited[ne]) {
-					q.offer(ne);
-					visited[ne]=true;
-					distance[ne]= distance[now] + nv;
-				}
-				
-			}
-
-		}
-	}
-
 
 #### BFS dx,dy 미로 국룰 : q.offer(new int[ ] {i, j}); | 미로 탐색
 
@@ -193,11 +141,63 @@ Arrays.sort(): 보편적으로 배열을 정렬<br>
 	}
 
 
+
 Queue<.Integer> q = new LinkedList<>();<br>
 q.poll(): 큐의 첫번째 요소를 삭제 및 반환<br>
 q.offer(): 큐 맨뒤에 값 삽입. offer()은 큐만 해당! add()는 큐가 꽉 찬 경우 IllegalStateException 에러 발생<br>
 q.peek(): 큐 맨 앞의 값 반환<br>
 
+
+#### 28. 트리의 지름 : Edge(e, value) Class 생성
+- maxi , distance[maxi] : 인덱스에는 명칭뒤에 i 붙이기. 값이랑 비교해야함. 인덱스 비교X
+
+		int maxi=1; //인덱스 i 표시 인덱스 1부터. BFS를 1부터 했으니 0은 패스
+		for(int i=1; i<=n; i++) { 
+			if(distance[maxi] < distance[i]) { // maxi인 distance 값 비교
+				maxi=i; //maxi : max 값을 가지고 있는 인덱스 i값을 넣어줌
+			}		}
+
+- class Edge 선언 : class Main 밖에다가 선언. import 처럼
+1) public Edge : 바로 반환값없이 퍼블릭 엣지 바로 해도 됨.
+2) this.v = v; : 타입 없이 됨.
+3) a[s].add(new Edge(e,w)); : 인접리스트에 Edge 클래스 넣을 때
+
+		class Edge { //class 이렇게 쓰는거 맞는지 정리..
+		int v; //정점
+		int w; //가중치
+		public Edge(int v, int w) {
+			this.v = v;
+			this.w = w;
+		}	}
+		a[s].add(new Edge(e,w)); //인접리스트에 Edge 추가. public Edge(v,w) 함수 활용
+
+- ArrayList<.Edge>[] : Edge 클래스로 ArrayList 선언
+
+		static ArrayList<Edge>[] a;
+		a = new ArrayList[n+1]; //노드 개수만큼
+		for(int i =1; i<n+1;i++) {
+			a[i]=new ArrayList<>();
+		}
+
+- Queue<Integer> q : 큐는 Integer로. Edge로 안해도 됨. 거리배열에 트리의 지름 따로 저장할 거기 때문.
+- crt, next 명칭 활용.
+
+		public static void BFS(int num) {
+			Queue<Integer> q = new LinkedList<>();
+			q.offer(num); //큐 인티저?
+			visited[num]=true;
+			
+			while(!q.isEmpty()) {
+				int crt = q.poll();
+				for(Edge next : a[crt]) {
+					if(!visited[next.v]) {
+						q.offer(next.v);
+						visited[next.v]=true;
+						distance[next.v]=distance[crt] + next.w;
+					}		}		}		}
+
+
+<br>
 
 #### boolean[] v = new boolean[n+1];
 boolean[] : 초기값 false<br>
