@@ -80,7 +80,7 @@
 
 <br>
 
-#### 28. DFS와 BFS : Collections.sort(arraylist)
+#### 26. DFS와 BFS : Collections.sort(arraylist)
 - Collections.sort(a[i]) : 배열아닌 ArrayList<Integer>의 정렬
 
 		for(int i=1; i<=n; i++) {
