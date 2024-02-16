@@ -23,6 +23,32 @@
 
 <br>
 
+#### 25. 친구 관계 파악하기 : 방문한 노드에서 빠져나올 때 visited[false]
+- 방문노드에서 빠져나올 때 visited[i] = false 해주는건 깊이를 count할 때 필요. 단순 방문 용도면 불필요.
+- 도착 인자 활용 boolean arrive;
+- 여긴 5명 사이클이 있는 친구관계가 있는지 확인을 위한 것으로 상수 5 사용해야함 O. 인자값 n 사용하면 안댐 X
+
+
+	private static void DFS(int v, int depth) {
+		//여기서는 상수 5
+  		if (depth == 5 || arrive) { //리턴으로 빠져나가면서 이미 도착한애가 arrive가 true면 딴데로 안가고 리턴해줌
+			arrive = true;
+			return;
+		}
+
+		visited[v] = true;
+		for (int i : a[v]) {
+			if(!visited[i]) {  //i: 인접리스트 a[i]노드와 연결된 '노드'
+				DFS(i, depth+1); //재귀함수 깊이우선
+			}
+		}
+		
+		visited[v] = false; //역으로 빠져나올 때 노드를 false
+		//끝까지 가거나 이미 방문한 노드에서 뒤로 빠져나올 때 false로 바꿔줌
+
+	}
+
+
 #### 트리의 지름 : Edge(e, value) Class 생성
 
 
@@ -142,25 +168,6 @@ q.poll(): 큐의 첫번째 요소를 삭제 및 반환<br>
 q.offer(): 큐 맨뒤에 값 삽입. offer()은 큐만 해당! add()는 큐가 꽉 찬 경우 IllegalStateException 에러 발생<br>
 q.peek(): 큐 맨 앞의 값 반환<br>
 
-#### DFS 국룰
-
-	private static void DFS(int v, int depth) {
-		if (depth == 5 || arrive) { //리턴으로 빠져나가면서 이미 도착한애가 arrive가 true면 딴데로 안가고 리턴해줌
-			arrive = true;
-			return;
-		}
-
-		visited[v] = true;
-		for (int i : a[v]) {
-			if(!visited[i]) {  //i: 인접리스트 a[i]노드와 연결된 '노드'
-				DFS(i, depth+1); //재귀함수 깊이우선
-			}
-		}
-		
-		visited[v] = false; //역으로 빠져나올 때 노드를 false
-		//끝까지 가거나 이미 방문한 노드에서 뒤로 빠져나올 때 false로 바꿔줌
-
-	}
 
 #### 소수판별함수 암기
 static boolean isPrime(int num){<br>
